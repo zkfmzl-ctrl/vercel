@@ -8328,7 +8328,8 @@ body.modal-is-open { overflow: hidden; }
 }
 
 .case-study-gallery .case-study-image {
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 1px solid var(--ui-line);
 }
