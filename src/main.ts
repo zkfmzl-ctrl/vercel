@@ -104,15 +104,15 @@ function projectPageMarkup(project: Project, index: number) {
             <div><dt>DURATION</dt><dd>2026 · SELECTED WORK</dd></div>
           </dl>
         </div>
-        <div class="project-detail-media">${posterMarkup(project)}</div>
+        <div class="project-detail-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>
         <div class="case-study-flow">
           <article><span>01</span><div><h3>OVERVIEW</h3><p>Problem을 선명하게 정의하고 프로젝트의 목표와 방향을 정리했습니다.</p></div></article>
           <article><span>02</span><div><h3>CONCEPT</h3><p>캐릭터와 장면의 핵심 태도를 정해 시각적 기준을 세웠습니다.</p></div></article>
           <article><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>AI와 2D/3D 그래픽을 조합해 Process를 빠르게 반복하고 Solution을 좁혔습니다.</p></div></article>
-          <article><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>컬러, 표정, 소품을 조율해 일관된 비주얼 언어를 만들었습니다.</p><div class="case-study-section-media">${posterMarkup(project)}</div></div></article>
+          <article><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>컬러, 표정, 소품을 조율해 일관된 비주얼 언어를 만들었습니다.</p><div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div></div></article>
           <article><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>움직임과 화면 전환을 설계해 장면 사이의 리듬을 정리했습니다.</p></div></article>
           <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>정지된 비주얼을 움직임으로 확장한 실제 프로젝트 결과입니다.</p>${motionMarkup(project)}</div></article>
-          <article><span>07</span><div><h3>FINAL</h3><p>Solution을 최종 이미지와 모션 에셋으로 확장했습니다.</p><div class="case-study-section-media">${posterMarkup(project)}</div></div></article>
+          <article><span>07</span><div><h3>FINAL</h3><p>Solution을 최종 이미지와 모션 에셋으로 확장했습니다.</p><div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div></div></article>
           <article><span>08</span><div><h3>RESULT</h3><p>캐릭터, 세계관, 스토리가 하나의 경험으로 기억되도록 완성했습니다.</p></div></article>
         </div>
       </div>

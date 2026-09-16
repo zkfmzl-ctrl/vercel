@@ -7872,7 +7872,7 @@ html, body { background: #0b0b0d !important; color: #f3f0ee !important; }
 .project-detail-meta div { padding-top: 10px; border-top: 1px solid var(--ui-line); }
 .project-detail-meta dt { color: rgba(243, 240, 238, .5); font: 700 9px/1 var(--mono); letter-spacing: .1em; }
 .project-detail-meta dd { margin: 7px 0 0; color: #f3f0ee; font: 700 12px/1.35 var(--mono); }
-.project-detail-media { width: min(100%, 500px); aspect-ratio: 9 / 16; margin: 34px auto; overflow: hidden; border: 1px solid var(--ui-line); background: #111114; }
+.project-detail-media { width: min(100%, 500px); aspect-ratio: var(--project-media-aspect, 16 / 9); margin: 34px auto; overflow: hidden; border: 1px solid var(--ui-line); background: #111114; }
 .project-detail-media .project-media { display: block; width: 100%; height: 100%; object-fit: cover; }
 .case-study-flow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--ui-line); }
 .case-study-flow article { display: grid; grid-template-columns: 42px 1fr; gap: 14px; min-height: 140px; padding: 22px 28px; border-right: 1px solid var(--ui-line); border-bottom: 1px solid var(--ui-line); }
@@ -8300,7 +8300,7 @@ body.modal-is-open { overflow: hidden; }
 
 .case-study-section-media {
   width: min(100%, 220px);
-  aspect-ratio: 9 / 16;
+  aspect-ratio: var(--project-media-aspect, 16 / 9);
   margin-top: 18px;
   overflow: hidden;
   border: 1px solid var(--ui-line);
