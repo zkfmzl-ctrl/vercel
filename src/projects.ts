@@ -70,7 +70,8 @@ export const projects: Project[] = [
       character: [
         { src: '/images/fairy/character-sheet.png', alt: 'Fairy of Dawn 캐릭터 디자인 시트' },
         { src: '/images/fairy/scene-10.png', alt: '요정 얼굴과 눈 디테일' },
-        { src: '/images/fairy/flower-sheet.png', alt: 'Luminous Blossom 꽃 디자인 시트' }
+        { src: '/images/fairy/flower-sheet.png', alt: 'Luminous Blossom 꽃 디자인 시트' },
+        { src: '/images/fairy/willow-sheet.png', alt: 'Sacred White Willow 나무 디자인 시트' }
       ],
       storyboard: { src: '/images/fairy/storyboard.png', alt: '요정 탄생 스토리보드와 콘티' },
       final: [
@@ -78,8 +79,7 @@ export const projects: Project[] = [
         { src: '/images/fairy/scene-06.png', alt: '확장된 천상의 들판' },
         { src: '/images/fairy/scene-07.png', alt: '흰 버드나무를 향해 가는 요정' },
         { src: '/images/fairy/scene-08.png', alt: '흰 버드나무 앞의 요정 엔딩 장면' }
-      ],
-      result: { src: '/images/fairy/willow-sheet.png', alt: 'Sacred White Willow 세계관 디자인 시트' }
+      ]
     }
   },
   {

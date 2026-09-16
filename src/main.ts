@@ -141,8 +141,8 @@ function projectPageMarkup(project: Project, index: number) {
           <article class="case-study-wide"><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>${copy.process}</p>${processMedia}</div></article>
           <article class="case-study-wide"><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>${copy.character}</p>${characterMedia}</div></article>
           <article class="case-study-wide"><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>${copy.storyboard}</p>${storyboardMedia}</div></article>
-          <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>${copy.motion}</p>${motionMarkup(project)}</div></article>
-          <article class="case-study-wide"><span>07</span><div><h3>FINAL</h3><p>${copy.final}</p>${finalMedia}</div></article>
+          <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>${copy.motion}</p></div></article>
+          <article class="case-study-wide"><span>07</span><div><h3>FINAL</h3><p>${copy.final}</p>${motionMarkup(project)}${finalMedia}</div></article>
           <article class="case-study-wide"><span>08</span><div><h3>RESULT</h3><p>${copy.result}</p>${resultMedia}</div></article>
         </div>
       </div>
