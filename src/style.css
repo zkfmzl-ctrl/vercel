@@ -8290,12 +8290,14 @@ body.modal-is-open { overflow: hidden; }
 .project-page .case-study-flow {
   width: min(calc(100% - 36px), 1088px);
   margin: 0 auto;
+  grid-template-columns: 1fr;
   border: 1px solid var(--ui-line);
 }
 
 .project-page .case-study-flow article {
   min-height: 178px;
   padding: 28px;
+  border-right: 0;
 }
 
 .project-page .case-study-flow article.case-study-wide {
@@ -8304,8 +8306,8 @@ body.modal-is-open { overflow: hidden; }
 }
 
 .case-study-wide-media {
-  width: 100%;
-  margin-top: 18px;
+  width: min(100%, 960px);
+  margin: 18px auto 0;
   overflow: hidden;
   border: 1px solid var(--ui-line);
   background: #111114;
@@ -8319,9 +8321,10 @@ body.modal-is-open { overflow: hidden; }
 
 .case-study-gallery {
   display: grid;
+  width: min(100%, 960px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 18px;
+  margin: 18px auto 0;
 }
 
 .case-study-gallery .case-study-image {
@@ -8346,7 +8349,7 @@ body.modal-is-open { overflow: hidden; }
 .case-study-section-media {
   width: min(100%, 220px);
   aspect-ratio: var(--project-media-aspect, 16 / 9);
-  margin-top: 18px;
+  margin: 18px auto 0;
   overflow: hidden;
   border: 1px solid var(--ui-line);
   background: #111114;
@@ -8399,7 +8402,7 @@ body.modal-is-open { overflow: hidden; }
 .case-study-motion-media {
   width: min(100%, 720px);
   aspect-ratio: 16 / 9;
-  margin-top: 18px;
+  margin: 18px auto 0;
   overflow: hidden;
   border: 1px solid var(--ui-line);
   background: #08080a;
