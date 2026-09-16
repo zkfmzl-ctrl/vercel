@@ -239,9 +239,9 @@ export const projects: Project[] = [
       motionClips: [
         { src: '/videos/coffee/clip-01.mp4', alt: '커피 한잔 사이 연결 영상 01' },
         { src: '/videos/coffee/clip-02.mp4', alt: '커피 한잔 사이 연결 영상 02' },
-        { src: '/videos/coffee/clip-03.mp4', alt: '커피 한잔 사이 연결 영상 03' },
+        { src: '/videos/coffee/alt-nature-transition.mp4', alt: '커피 한잔 사이 자연으로 전환되는 연결 영상 03' },
         { src: '/videos/coffee/clip-04.mp4', alt: '커피 한잔 사이 연결 영상 04' },
-        { src: '/videos/coffee/clip-05.mp4', alt: '커피 한잔 사이 연결 영상 05' },
+        { src: '/videos/coffee/alt-window-portrait.mp4', alt: '커피 한잔 사이 창 너머 인물 연결 영상 05' },
         { src: '/videos/coffee/clip-06.mp4', alt: '커피 한잔 사이 연결 영상 06' }
       ],
       final: [
@@ -335,7 +335,7 @@ export const projects: Project[] = [
       motionClips: [
         { src: '/videos/seal/clip-01.mp4', alt: '물범 에피소드 연결 영상 01' },
         { src: '/videos/seal/clip-02.mp4', alt: '물범 에피소드 연결 영상 02' },
-        { src: '/videos/seal/clip-03.mp4', alt: '물범 에피소드 연결 영상 03' },
+        { src: '/videos/seal/alt-open-mouth.mp4', alt: '물범 에피소드 입을 벌리고 반응하는 연결 영상 03' },
         { src: '/videos/seal/clip-04.mp4', alt: '물범 에피소드 연결 영상 04' },
         { src: '/videos/seal/clip-05.mp4', alt: '물범 에피소드 연결 영상 05' },
         { src: '/videos/seal/clip-06.mp4', alt: '물범 에피소드 연결 영상 06' }
