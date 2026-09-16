@@ -29,6 +29,7 @@ export type Project = {
     process?: CaseStudyImage[];
     character?: CaseStudyImage[];
     storyboard?: CaseStudyImage;
+    motionClips?: CaseStudyImage[];
     final?: CaseStudyImage[];
     result?: CaseStudyImage;
   };
@@ -74,6 +75,14 @@ export const projects: Project[] = [
         { src: '/images/fairy/willow-sheet.png', alt: 'Sacred White Willow 나무 디자인 시트' }
       ],
       storyboard: { src: '/images/fairy/storyboard.png', alt: '요정 탄생 스토리보드와 콘티' },
+      motionClips: [
+        { src: '/videos/fairy/transition-02.mp4', alt: '꽃봉오리가 빛을 받으며 열리는 연결 영상' },
+        { src: '/videos/fairy/transition-03.mp4', alt: '꽃 안에서 요정이 깨어나는 연결 영상' },
+        { src: '/videos/fairy/transition-04.mp4', alt: '요정이 꽃 위에서 일어나는 연결 영상' },
+        { src: '/videos/fairy/transition-05.mp4', alt: '요정이 빛의 들판에 서는 연결 영상' },
+        { src: '/videos/fairy/transition-06.mp4', alt: '요정이 들판 위를 비행하는 연결 영상' },
+        { src: '/videos/fairy/transition-07.mp4', alt: '요정이 흰 버드나무에 도착하는 연결 영상' }
+      ],
       final: [
         { src: '/images/fairy/scene-05.png', alt: '빛의 들판을 비행하는 요정' },
         { src: '/images/fairy/scene-06.png', alt: '확장된 천상의 들판' },

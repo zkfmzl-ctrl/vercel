@@ -47,6 +47,17 @@ function motionMarkup(project: Project) {
   `;
 }
 
+function motionClipsMarkup(project: Project) {
+  const clips = project.caseStudy?.motionClips;
+  if (!clips?.length) return '';
+  return `<div class="case-study-motion-clips">${clips.map((clip, index) => `
+    <figure class="case-study-motion-clip">
+      <video autoplay muted loop playsinline preload="metadata" aria-label="${clip.alt}"><source src="${clip.src}" type="video/mp4" /></video>
+      <figcaption>CLIP 0${index + 1}</figcaption>
+    </figure>
+  `).join('')}</div>`;
+}
+
 function caseStudyImageMarkup(image: { src: string; alt: string }, className = '') {
   return `<img class="case-study-image ${className}" src="${image.src}" alt="${image.alt}" loading="lazy" />`;
 }
@@ -107,6 +118,7 @@ function projectPageMarkup(project: Project, index: number) {
   const caseStudy = project.caseStudy;
   const conceptMedia = caseStudy?.concept ? `<div class="case-study-wide-media">${caseStudyImageMarkup(caseStudy.concept)}</div>` : '';
   const processMedia = caseStudy?.process?.length ? caseStudyGalleryMarkup(caseStudy.process, 'process-gallery') : '';
+  const motionMedia = caseStudy?.motionClips?.length ? motionClipsMarkup(project) : (!caseStudy ? motionMarkup(project) : '');
   const characterMedia = caseStudy?.character?.length
     ? caseStudyGalleryMarkup(caseStudy.character, 'character-gallery')
     : `<div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>`;
@@ -141,7 +153,7 @@ function projectPageMarkup(project: Project, index: number) {
           <article class="case-study-wide"><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>${copy.process}</p>${processMedia}</div></article>
           <article class="case-study-wide"><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>${copy.character}</p>${characterMedia}</div></article>
           <article class="case-study-wide"><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>${copy.storyboard}</p>${storyboardMedia}</div></article>
-          <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>${copy.motion}</p></div></article>
+          <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>${copy.motion}</p>${motionMedia}</div></article>
           <article class="case-study-wide"><span>07</span><div><h3>FINAL</h3><p>${copy.final}</p>${motionMarkup(project)}${finalMedia}</div></article>
           <article class="case-study-wide"><span>08</span><div><h3>RESULT</h3><p>${copy.result}</p>${resultMedia}</div></article>
         </div>

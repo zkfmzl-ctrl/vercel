@@ -8436,6 +8436,40 @@ body.modal-is-open { overflow: hidden; }
   object-fit: contain;
 }
 
+.case-study-motion-clips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: min(100%, 960px);
+  margin: 18px auto 0;
+}
+
+.case-study-motion-clip {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--ui-line);
+  background: #08080a;
+}
+
+.case-study-motion-clip video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.case-study-motion-clip figcaption {
+  padding: 8px 10px;
+  color: rgba(243, 240, 238, .54);
+  font: 700 9px/1 var(--mono);
+  letter-spacing: .08em;
+}
+
+@media (max-width: 640px) {
+  .case-study-motion-clips { grid-template-columns: 1fr; }
+}
+
 .case-study-motion-note {
   margin: 10px 0 0;
   color: rgba(243, 240, 238, .5);
