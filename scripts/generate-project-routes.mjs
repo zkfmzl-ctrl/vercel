@@ -4,6 +4,7 @@ import { join } from 'node:path';
 const root = process.cwd();
 const source = join(root, 'dist', 'index.html');
 const projectSlugs = [
+  'varco-sound',
   'pink-noise',
   'neon-city',
   'lilo-character',
