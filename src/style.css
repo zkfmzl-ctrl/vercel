@@ -2177,6 +2177,7 @@ body::before {
 .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 12px; }
 .project-tags span { padding: 4px 5px; color: var(--muted); font-size: 7px; font-weight: 900; border: 1px solid var(--line); }
 .project-link { width: 100%; padding-top: 9px; color: var(--ink); border-top: 1px solid var(--line); }
+.press-play-grid > .project-section .project-link { justify-content: center; gap: 10px; }
 
 .about-experience-section,
 .about-section,
