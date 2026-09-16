@@ -1,0 +1,5 @@
+_source_media/
+tmp/
+node_modules/
+*.bak
+*.tar.gz
