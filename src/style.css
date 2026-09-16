@@ -8295,9 +8295,22 @@ body.modal-is-open { overflow: hidden; }
 }
 
 .project-page .case-study-flow article {
+  position: relative;
+  display: block;
   min-height: 178px;
   padding: 28px;
   border-right: 0;
+}
+
+.project-page .case-study-flow article > span {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+.project-page .case-study-flow article > div {
+  width: min(calc(100% - 84px), 960px);
+  margin-inline: auto;
 }
 
 .project-page .case-study-flow article.case-study-wide {
