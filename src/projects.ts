@@ -20,6 +20,7 @@ export type Project = {
   title: string;
   category: string;
   year: string;
+  duration?: string;
   description: string;
   tech?: string[];
   role?: string[];
@@ -28,7 +29,7 @@ export type Project = {
     concept?: CaseStudyImage;
     process?: CaseStudyImage[];
     character?: CaseStudyImage[];
-    storyboard?: CaseStudyImage;
+    storyboard?: CaseStudyImage | CaseStudyImage[];
     motionClips?: CaseStudyImage[];
     final?: CaseStudyImage[];
     result?: CaseStudyImage;
@@ -259,42 +260,52 @@ export const projects: Project[] = [
     title: 'MOTION SOURCE 05',
     category: 'MOTION',
     year: '05',
-    media: '/videos/source-05.mp4',
+    media: '/videos/pet/chuncheon-pet-festival.mp4',
     mediaType: 'video',
-    poster: '/images/video-posters/source-05.jpg',
+    poster: '/images/pet/chuncheon/poster.png',
     mediaAspect: '9:16',
-    description: '전달받은 세로형 모션 소스를 독립 프로젝트 카드로 구성했습니다.',
+    duration: '01:59',
+    description: '보호시설에서 춘천의 호수와 숲을 지나 다시 함께 걷는 과정을 담은 세로형 AI 리얼리티 영상입니다.',
     tech: ['MOTION', 'EDITING'],
-    role: ['Motion Direction', 'Editing'],
+    role: ['Visual Direction', 'Storyboarding', 'Motion Editing'],
     caseStudy: {
       copy: {
-        overview: '반려견과 보호자의 관계를 여행과 산책의 장면으로 확장한 세로형 모션 프로젝트입니다.',
-        concept: '흑백의 고요한 순간에서 따뜻한 자연의 색으로 이동하는 감정의 흐름을 설정했습니다.',
-        process: '스케치와 실사 키이미지를 비교하며 반려견의 시선과 보호자의 동선을 정리했습니다.',
-        character: '보호자와 반려견의 외형, 표정, 행동을 캐릭터 시트로 고정했습니다.',
-        storyboard: '실내의 고립감에서 바깥 풍경과 교감으로 이어지는 세로 화면의 장면 순서를 설계했습니다.',
-        motion: '세로 화면 안에서 시선과 이동 방향이 자연스럽게 이어지도록 모션을 구성했습니다.',
-        final: '반려견과 보호자의 여정을 세로형 영상과 최종 키이미지로 정리했습니다.',
-        result: '세로 프레임에 맞춘 시선 유도와 감정 전환을 통해 짧은 반려동물 서사를 완성했습니다.'
+        overview: '보호시설에서 시작해 춘천의 호수와 숲, 산책길을 함께 지나며 다시 신뢰를 쌓는 9:16 감성 숏필름입니다.',
+        concept: '붙잡는 대신 기다리는 태도와, 함께 걷는 거리의 변화로 ‘새로운 시작’을 시각화했습니다.',
+        process: '보호시설의 흑백 장면에서 춘천의 자연과 노을로 이어지는 키이미지를 순서화하고 보호자와 강아지의 거리·시선·접촉 변화를 정리했습니다.',
+        character: '보호자와 강아지의 턴어라운드와 외형을 하나의 캐릭터 시트로 고정해 장면 간 정체성을 유지했습니다.',
+        storyboard: '보호시설에서 춘천의 산책길까지 49개 쇼트의 거리·카메라·행동 변화를 설계했습니다.',
+        motion: '초반의 경계와 후반의 동행이 세로 프레임 안에서 자연스럽게 이어지도록 이동·시선·색 변화를 편집했습니다.',
+        final: '춘천의 풍경과 보호자·강아지의 신뢰 회복 서사를 119초 세로 영상과 키이미지로 확장했습니다.',
+        result: '신뢰가 회복될수록 줄어드는 물리적 거리를 시각 장치로 삼아 ‘다시, 함께 걷는 춘천’의 메시지를 완성했습니다.'
       },
-      concept: { src: '/images/pet/concept-sketch.png', alt: '반려동물 프로젝트 콘셉트 스케치' },
+      concept: { src: '/images/pet/chuncheon/concept.jpg', alt: '춘천 호수와 산의 콘셉트 이미지' },
       process: [
-        { src: '/images/pet/process-1.png', alt: '반려동물 프로젝트 키이미지 01' },
-        { src: '/images/pet/process-2.png', alt: '반려동물 프로젝트 키이미지 02' },
-        { src: '/images/pet/process-3.png', alt: '반려동물 프로젝트 키이미지 03' },
-        { src: '/images/pet/process-4.png', alt: '반려동물 프로젝트 키이미지 04' }
+        { src: '/images/pet/chuncheon/process-01.jpg', alt: '보호시설에서 시작하는 키이미지' },
+        { src: '/images/pet/chuncheon/process-02.jpg', alt: '케이블카로 춘천을 향하는 키이미지' },
+        { src: '/images/pet/chuncheon/process-03.jpg', alt: '숲과 산책으로 확장되는 키이미지' },
+        { src: '/images/pet/chuncheon/process-04.jpg', alt: '노을빛 장면으로 전환되는 키이미지' }
       ],
-      character: [
-        { src: '/images/pet/character-sheet.png', alt: '반려동물 보호자 캐릭터 디자인 시트' },
-        { src: '/images/pet/character-sheet-02.png', alt: '반려동물 캐릭터 디자인 시트' }
+      character: [{ src: '/images/pet/chuncheon/character-sheet.png', alt: '보호자와 강아지 턴어라운드 캐릭터 시트' }],
+      storyboard: [
+        { src: '/images/pet/chuncheon/storyboard-01.jpg', alt: '보호시설에서 보호자와 마주하는 스토리보드 프레임' },
+        { src: '/images/pet/chuncheon/storyboard-02.jpg', alt: '차 안에서 춘천으로 이동하는 스토리보드 프레임' },
+        { src: '/images/pet/chuncheon/storyboard-03.jpg', alt: '춘천 반려견 숲에 도착하는 스토리보드 프레임' },
+        { src: '/images/pet/chuncheon/storyboard-04.jpg', alt: '노을 속에서 손을 맞대는 스토리보드 프레임' }
       ],
-      storyboard: { src: '/images/pet/storyboard.png', alt: '반려동물 프로젝트 스토리보드' },
-      motionClips: [{ src: '/videos/source-05.mp4', alt: '반려동물 프로젝트 세로 모션 영상' }],
+      motionClips: [
+        { src: '/videos/pet/chuncheon/tr-01.mp4', alt: '보호시설에서 다가가는 연결 영상' },
+        { src: '/videos/pet/chuncheon/tr-06.mp4', alt: '차창 밖 춘천 풍경을 바라보는 연결 영상' },
+        { src: '/videos/pet/chuncheon/tr-09.mp4', alt: '케이블카 안에서 풍경을 바라보는 연결 영상' },
+        { src: '/videos/pet/chuncheon/tr-16.mp4', alt: '초원에서 보호자에게 달려오는 연결 영상' },
+        { src: '/videos/pet/chuncheon/tr-18.mp4', alt: '노을빛 호숫가를 함께 걷는 연결 영상' },
+        { src: '/videos/pet/chuncheon/tr-21.mp4', alt: '노을 속에서 손을 맞대는 연결 영상' }
+      ],
       final: [
-        { src: '/images/pet/process-1.png', alt: '반려동물 프로젝트 최종 장면 01' },
-        { src: '/images/pet/process-2.png', alt: '반려동물 프로젝트 최종 장면 02' },
-        { src: '/images/pet/process-3.png', alt: '반려동물 프로젝트 최종 장면 03' },
-        { src: '/images/pet/process-4.png', alt: '반려동물 프로젝트 최종 장면 04' }
+        { src: '/images/pet/chuncheon/final-01.jpg', alt: '춘천 반려견 숲 최종 장면' },
+        { src: '/images/pet/chuncheon/final-02.jpg', alt: '호숫가 산책 최종 장면' },
+        { src: '/images/pet/chuncheon/final-03.jpg', alt: '노을 속 교감 최종 장면' },
+        { src: '/images/pet/chuncheon/final-04.jpg', alt: '기억으로 남는 엔딩 최종 장면' }
       ]
     }
   },

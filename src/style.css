@@ -8348,6 +8348,12 @@ body.modal-is-open { overflow: hidden; }
   border: 1px solid var(--ui-line);
 }
 
+.process-gallery .case-study-image,
+.storyboard-gallery .case-study-image,
+.final-gallery .case-study-image {
+  aspect-ratio: 9 / 16;
+}
+
 .character-gallery {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: start;

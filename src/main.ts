@@ -52,7 +52,7 @@ function motionClipsMarkup(project: Project) {
   if (!clips?.length) return '';
   return `<div class="case-study-motion-clips">${clips.map((clip, index) => `
     <figure class="case-study-motion-clip">
-      <video autoplay muted loop playsinline preload="metadata" aria-label="${clip.alt}"><source src="${clip.src}" type="video/mp4" /></video>
+      <video autoplay muted loop playsinline preload="metadata" aria-label="${clip.alt}" style="aspect-ratio: ${mediaAspectRatio(project)}"><source src="${clip.src}" type="video/mp4" /></video>
       <figcaption>CLIP 0${index + 1}</figcaption>
     </figure>
   `).join('')}</div>`;
@@ -122,7 +122,11 @@ function projectPageMarkup(project: Project, index: number) {
   const characterMedia = caseStudy?.character?.length
     ? caseStudyGalleryMarkup(caseStudy.character, 'character-gallery')
     : `<div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>`;
-  const storyboardMedia = caseStudy?.storyboard ? `<div class="case-study-wide-media">${caseStudyImageMarkup(caseStudy.storyboard)}</div>` : '';
+  const storyboardMedia = caseStudy?.storyboard
+    ? Array.isArray(caseStudy.storyboard)
+      ? caseStudyGalleryMarkup(caseStudy.storyboard, 'storyboard-gallery')
+      : `<div class="case-study-wide-media">${caseStudyImageMarkup(caseStudy.storyboard)}</div>`
+    : '';
   const finalMedia = caseStudy?.final?.length
     ? caseStudyGalleryMarkup(caseStudy.final, 'final-gallery')
     : `<div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>`;
@@ -142,7 +146,7 @@ function projectPageMarkup(project: Project, index: number) {
           <dl class="project-detail-meta">
             <div><dt>ROLE</dt><dd>${role}</dd></div>
             <div><dt>TOOLS</dt><dd>${tools}</dd></div>
-            <div><dt>DURATION</dt><dd>2026 · SELECTED WORK</dd></div>
+            <div><dt>DURATION</dt><dd>${project.duration ?? '2026 · SELECTED WORK'}</dd></div>
           </dl>
         </div>
         <div class="project-detail-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>
