@@ -8348,12 +8348,13 @@ body.modal-is-open { overflow: hidden; }
 }
 
 .character-gallery {
-  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, .75fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
 }
 
-.character-gallery .case-study-image:first-child {
-  grid-column: 1 / -1;
+.character-gallery .case-study-image {
+  object-fit: contain;
+  background: #111114;
 }
 
 .final-gallery {
@@ -8430,7 +8431,6 @@ body.modal-is-open { overflow: hidden; }
   .case-study-gallery,
   .character-gallery,
   .final-gallery { grid-template-columns: 1fr; }
-  .character-gallery .case-study-image:first-child { grid-column: auto; }
 }
 
 .case-study-motion-media video {
