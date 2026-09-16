@@ -23,7 +23,7 @@ export const projects: Project[] = [
     id: 'work-01',
     slug: 'pink-noise',
     type: 'web',
-    title: 'NC WALL',
+    title: 'FAIRY OF DAWN',
     category: 'ILLUSTRATION',
     year: '01',
     media: '/videos/source-01.mp4',
