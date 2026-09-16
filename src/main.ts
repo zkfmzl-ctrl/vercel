@@ -68,112 +68,6 @@ function projectSection(project: Project, index: number) {
   `;
 }
 
-const varcoImage = (name: string) => `/images/varco-sound/${name}`;
-const varcoVideo = (name: string) => `/videos/varco-sound/${name}`;
-
-function varcoProjectPageMarkup(project: Project) {
-  const motionClips = [
-    ['2.mp4', '꽃봉오리 · 빛의 접촉', 'bud.png'],
-    ['6.mp4', '요정의 각성 · 첫 비행', 'flight.png'],
-    ['9.mp4', '세계의 확장 · 줌아웃', 'tree-reveal.png'],
-    ['11.mp4', '엔딩 · 흰 버드나무', 'ending.png'],
-  ];
-
-  return `
-    <div class="varco-page" role="main" aria-labelledby="varco-title">
-      <header class="varco-header">
-        <a class="varco-brand" href="/#home">NO RULES<span>.</span></a>
-        <a class="varco-back" href="/#works">← BACK TO WORKS</a>
-      </header>
-
-      <div class="varco-progress" aria-hidden="true"><span></span></div>
-
-      <section class="varco-hero" id="overview">
-        <div class="varco-hero-image-wrap">
-          <img class="varco-hero-image" src="${varcoImage('hero.png')}" alt="빛의 들판을 날아가는 요정" />
-          <span class="varco-hero-orbit orbit-one"></span>
-          <span class="varco-hero-orbit orbit-two"></span>
-        </div>
-        <div class="varco-hero-copy">
-          <p class="varco-kicker">AI FILM · VISUAL DEVELOPMENT · 2026</p>
-          <h1 id="varco-title">FAIRY<br /><em>OF DAWN</em></h1>
-          <p class="varco-lede">꽃봉오리 안에서 깨어난 작은 생명이 빛의 세계를 발견하는 순간을, 이미지와 모션으로 연결했습니다.</p>
-          <div class="varco-hero-meta"><span>01 / 08</span><span>VARCO SOUND</span><span>58 SEC. STORY</span></div>
-        </div>
-      </section>
-
-      <div class="varco-layout">
-        <aside class="varco-index" aria-label="Case study navigation">
-          <span>CASE STUDY</span>
-          <a href="#overview">01 OVERVIEW</a>
-          <a href="#concept">02 CONCEPT</a>
-          <a href="#process">03 PROCESS</a>
-          <a href="#character">04 CHARACTER</a>
-          <a href="#storyboard">05 CONTI</a>
-          <a href="#motion">06 MOTION</a>
-          <a href="#final">07 FINAL</a>
-          <a href="#result">08 RESULT</a>
-        </aside>
-
-        <div class="varco-content">
-          <section class="varco-section varco-overview-section" aria-labelledby="varco-overview-title">
-            <div class="varco-section-head"><span>01</span><div><p class="varco-kicker">OVERVIEW</p><h2 id="varco-overview-title">빛이 닿는 순간,<br /><em>세계가 태어난다.</em></h2></div></div>
-            <div class="varco-overview-grid">
-              <div><p class="varco-section-copy">투명한 꽃봉오리에서 시작해 두 요정이 손을 잡고 날아오르는 58초의 탄생 서사입니다. 초반에는 작은 질감과 숨결에 집중하고, 후반으로 갈수록 거대한 세계를 열어 보이도록 스케일의 변화를 설계했습니다.</p><p class="varco-section-copy muted">빛 · 투명성 · 탄생 · 확장</p></div>
-              <dl class="varco-meta-list"><div><dt>ROLE</dt><dd>Visual Direction<br />Character Design<br />Motion Editing</dd></div><div><dt>TOOLS</dt><dd>AI Image · AI Video<br />Premiere Pro</dd></div><div><dt>DELIVERABLE</dt><dd>Character / World / Storyboard<br />Motion Assets / Final Film</dd></div></dl>
-            </div>
-          </section>
-
-          <section class="varco-section" id="concept" aria-labelledby="varco-concept-title">
-            <div class="varco-section-head"><span>02</span><div><p class="varco-kicker">CONCEPT</p><h2 id="varco-concept-title">A sacred meadow<br /><em>above the clouds.</em></h2></div></div>
-            <div class="varco-image-frame wide-frame"><img src="${varcoImage('environment-sheet.png')}" alt="Celestial Meadow 환경 디자인 시트" loading="lazy" /></div>
-            <div class="varco-note-row"><p>어두운 판타지가 아닌, 아침의 흰빛으로 가득한 신성한 들판을 핵심 태도로 설정했습니다.</p><div class="varco-swatches" aria-label="컬러 팔레트"><i></i><i></i><i></i><i></i><i></i></div></div>
-          </section>
-
-          <section class="varco-section" id="process" aria-labelledby="varco-process-title">
-            <div class="varco-section-head"><span>03</span><div><p class="varco-kicker">PROCESS / DEVELOPMENT</p><h2 id="varco-process-title">작은 디테일에서<br /><em>큰 장면으로.</em></h2></div></div>
-            <div class="varco-process-grid">
-              <article><span>01</span><img src="${varcoImage('bud.png')}" alt="투명한 꽃봉오리 초기 장면" loading="lazy" /><h3>SEED</h3><p>꽃봉오리의 재질과 빛의 방향을 먼저 고정했습니다.</p></article>
-              <article><span>02</span><img src="${varcoImage('birth.png')}" alt="꽃 안에서 잠든 요정" loading="lazy" /><h3>AWAKEN</h3><p>머리카락, 날개, 손끝을 순서대로 노출해 탄생의 긴장감을 만들었습니다.</p></article>
-              <article><span>03</span><img src="${varcoImage('awakening.png')}" alt="꽃 위에서 깨어난 요정" loading="lazy" /><h3>REVEAL</h3><p>클로즈업에서 와이드로 전환하며 세계의 크기를 확장했습니다.</p></article>
-            </div>
-          </section>
-
-          <section class="varco-section" id="character" aria-labelledby="varco-character-title">
-            <div class="varco-section-head"><span>04</span><div><p class="varco-kicker">CHARACTER / VISUAL</p><h2 id="varco-character-title">빛을 입은<br /><em>작은 주인공.</em></h2></div></div>
-            <div class="varco-character-grid"><div class="varco-image-frame"><img src="${varcoImage('character-sheet.png')}" alt="Fairy of Dawn 캐릭터 디자인 시트" loading="lazy" /></div><div><div class="varco-image-frame portrait-frame"><img src="${varcoImage('portrait.png')}" alt="요정 얼굴 클로즈업" loading="lazy" /></div><p class="varco-caption">투명한 날개와 아이보리 드레스, 골드 라인과 꽃 장식을 캐릭터의 고정 언어로 삼았습니다.</p></div></div>
-          </section>
-
-          <section class="varco-section" id="storyboard" aria-labelledby="varco-storyboard-title">
-            <div class="varco-section-head"><span>05</span><div><p class="varco-kicker">STORYBOARD / CONTI</p><h2 id="varco-storyboard-title">가까이서 시작해<br /><em>멀리 열린다.</em></h2></div></div>
-            <div class="varco-image-frame wide-frame"><img src="${varcoImage('storyboard.png')}" alt="요정 탄생 스토리보드와 콘티" loading="lazy" /></div>
-            <div class="varco-beat-list"><div><b>01—03</b><span>꽃봉오리 / 햇빛 / 빛 입자</span></div><div><b>04—06</b><span>각성 / 머리카락 / 날개 끝</span></div><div><b>07—08</b><span>탄생 / 핑크빛 요정의 등장</span></div><div><b>09—10</b><span>비행 / 흰 버드나무 리빌</span></div></div>
-          </section>
-
-          <section class="varco-section varco-motion-section" id="motion" aria-labelledby="varco-motion-title">
-            <div class="varco-section-head"><span>06</span><div><p class="varco-kicker">MOTION</p><h2 id="varco-motion-title">Still images,<br /><em>softly in motion.</em></h2></div></div>
-            <div class="varco-main-video"><video controls playsinline preload="metadata" poster="${varcoImage('hero.png')}" aria-label="Fairy of Dawn 메인 모션"><source src="${project.media}" type="video/mp4" /></video><span>MAIN MOTION RESULT · 01</span></div>
-            <div class="varco-motion-grid">${motionClips.map(([file, label, poster]) => `<figure><video controls playsinline preload="metadata" poster="${varcoImage(poster)}" aria-label="${label}"><source src="${varcoVideo(file)}" type="video/mp4" /></video><figcaption>${label}</figcaption></figure>`).join('')}</div>
-          </section>
-
-          <section class="varco-section" id="final" aria-labelledby="varco-final-title">
-            <div class="varco-section-head"><span>07</span><div><p class="varco-kicker">FINAL</p><h2 id="varco-final-title">The world<br /><em>opens with light.</em></h2></div></div>
-            <div class="varco-final-hero"><img src="${varcoImage('ending.png')}" alt="흰 버드나무 앞에 선 요정" loading="lazy" /><div><p>FINAL KEY VISUAL</p><strong>사라지는 장면이 아니라,<br />기억에 남는 장면으로.</strong></div></div>
-            <div class="varco-final-grid"><img src="${varcoImage('world.png')}" alt="하늘 위 빛의 들판" loading="lazy" /><img src="${varcoImage('tree-reveal.png')}" alt="거대한 흰 버드나무" loading="lazy" /><img src="${varcoImage('detail.png')}" alt="꽃잎과 이슬 디테일" loading="lazy" /></div>
-          </section>
-
-          <section class="varco-section varco-result-section" id="result" aria-labelledby="varco-result-title">
-            <div class="varco-section-head"><span>08</span><div><p class="varco-kicker">RESULT</p><h2 id="varco-result-title">A complete visual<br /><em>language for wonder.</em></h2></div></div>
-            <p class="varco-result-copy">캐릭터, 세계관, 스토리와 사운드를 하나의 경험으로 묶었습니다. 작은 꽃의 질감에서 시작해 거대한 세계의 리빌로 끝나는 흐름을 통해, AI 이미지와 모션을 연결하는 시각적 문법을 구축했습니다.</p>
-            <div class="varco-result-tags"><span>CHARACTER CONSISTENCY</span><span>WORLD BUILDING</span><span>AI VISUAL DEVELOPMENT</span><span>CINEMATIC MOTION</span></div>
-            <a class="varco-next-link" href="/#works">BACK TO SELECTED WORKS <span>↗</span></a>
-          </section>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
 function featuredWorkMarkup() {
   return projects.filter((project) => project.featured !== false).map((project, index) => `
     <a class="featured-work-card featured-work-card-${index + 1}" href="/work/${project.slug}" data-work-category="${project.category}" data-featured-card hidden>
@@ -372,9 +266,7 @@ const requestedProject = requestedSlug
 
 if (requestedProject) {
   const projectIndex = projects.indexOf(requestedProject);
-  app.innerHTML = requestedProject.slug === 'varco-sound'
-    ? varcoProjectPageMarkup(requestedProject)
-    : projectPageMarkup(requestedProject, projectIndex);
+  app.innerHTML = projectPageMarkup(requestedProject, projectIndex);
   document.title = `${requestedProject.title} · NO RULES.`;
   document.querySelectorAll<HTMLVideoElement>('.project-page video').forEach((video) => {
     void video.play().catch(() => undefined);

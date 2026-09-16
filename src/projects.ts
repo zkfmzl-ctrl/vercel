@@ -20,21 +20,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'work-varco-sound',
-    slug: 'varco-sound',
-    type: 'web',
-    title: 'FAIRY OF DAWN',
-    category: 'ANIMATION / AI FILM',
-    year: '2026',
-    media: '/videos/varco-sound/1.mp4',
-    mediaType: 'video',
-    poster: '/images/varco-sound/hero.png',
-    mediaAspect: '16:9',
-    description: '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 신성한 흰 버드나무를 만나는 탄생의 서사를 만들었습니다.',
-    tech: ['AI VISUAL', 'CHARACTER DESIGN', 'MOTION'],
-    role: ['Visual Direction', 'Character Design', 'Motion Editing']
-  },
-  {
     id: 'work-01',
     slug: 'pink-noise',
     type: 'web',
