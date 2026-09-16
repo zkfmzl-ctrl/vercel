@@ -122,7 +122,11 @@ export const projects: Project[] = [
         { src: '/images/berex/product-blue.png', alt: 'BEREX Pebble Chair 블루 제품 이미지' },
         { src: '/images/berex/story-01.png', alt: 'BEREX 제품 영상 스토리 장면 01' }
       ],
-      character: [{ src: '/images/berex/visual-sheet.png', alt: 'BEREX Pebble Chair 제품 비주얼 시트' }],
+      character: [
+        { src: '/images/berex/character-male.png', alt: 'BEREX 민준 캐릭터 디자인 시트' },
+        { src: '/images/berex/character-female.png', alt: 'BEREX 서연 캐릭터 디자인 시트' },
+        { src: '/images/berex/character-cat.png', alt: 'BEREX 모카 고양이 캐릭터 디자인 시트' }
+      ],
       storyboard: { src: '/images/berex/story-02.png', alt: 'BEREX 제품 영상 스토리보드 장면' },
       motionClips: [
         { src: '/videos/berex/clip-01.mp4', alt: 'BEREX 제품 소개 연결 영상 01' },
