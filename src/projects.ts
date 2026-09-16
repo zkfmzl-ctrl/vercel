@@ -137,10 +137,10 @@ export const projects: Project[] = [
         { src: '/videos/berex/clip-06.mp4', alt: 'BEREX 영상 22번 연결 클립' }
       ],
       final: [
-        { src: '/images/berex/story-01.png', alt: 'BEREX 제품 영상 최종 장면 01' },
-        { src: '/images/berex/story-02.png', alt: 'BEREX 제품 영상 최종 장면 02' },
-        { src: '/images/berex/story-03.png', alt: 'BEREX 제품 영상 최종 장면 03' },
-        { src: '/images/berex/story-04.png', alt: 'BEREX 제품 영상 최종 장면 04' }
+        { src: '/images/berex/story-01.png', alt: 'BEREX 최종 장면 · 현관 배경' },
+        { src: '/images/berex/storyboard-08.png', alt: 'BEREX 최종 장면 · 햇빛 드는 거실 배경' },
+        { src: '/images/berex/storyboard-14.png', alt: 'BEREX 최종 장면 · 책장 앞 배경' },
+        { src: '/images/berex/storyboard-19.png', alt: 'BEREX 최종 장면 · 침실 배경' }
       ]
     }
   },
