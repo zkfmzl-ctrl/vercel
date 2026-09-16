@@ -8360,6 +8360,10 @@ body.modal-is-open { overflow: hidden; }
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.project-page .case-study-flow .case-study-result-copy {
+  margin-top: 22px;
+}
+
 .case-study-section-media {
   width: min(100%, 220px);
   aspect-ratio: var(--project-media-aspect, 16 / 9);

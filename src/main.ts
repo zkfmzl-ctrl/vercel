@@ -126,7 +126,6 @@ function projectPageMarkup(project: Project, index: number) {
   const finalMedia = caseStudy?.final?.length
     ? caseStudyGalleryMarkup(caseStudy.final, 'final-gallery')
     : `<div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>`;
-  const resultMedia = caseStudy?.result ? `<div class="case-study-wide-media result-media">${caseStudyImageMarkup(caseStudy.result)}</div>` : '';
   return `
     <div class="project-page" role="main" aria-labelledby="${project.id}-detail-title">
       <header class="project-page-header">
@@ -154,8 +153,7 @@ function projectPageMarkup(project: Project, index: number) {
           <article class="case-study-wide"><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>${copy.character}</p>${characterMedia}</div></article>
           <article class="case-study-wide"><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>${copy.storyboard}</p>${storyboardMedia}</div></article>
           <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>${copy.motion}</p>${motionMedia}</div></article>
-          <article class="case-study-wide"><span>07</span><div><h3>FINAL</h3><p>${copy.final}</p>${motionMarkup(project)}${finalMedia}</div></article>
-          <article class="case-study-wide"><span>08</span><div><h3>RESULT</h3><p>${copy.result}</p>${resultMedia}</div></article>
+          <article class="case-study-wide"><span>07</span><div><h3>FINAL / RESULT</h3><p>${copy.final}</p>${motionMarkup(project)}${finalMedia}<p class="case-study-result-copy">${copy.result}</p></div></article>
         </div>
       </div>
       <a class="project-page-footer-back" href="/#works">← BACK TO WORKS</a>
