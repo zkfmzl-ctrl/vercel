@@ -52,7 +52,7 @@ export const projects: Project[] = [
     role: ['Visual Direction', 'Character Design', 'Motion Editing'],
     caseStudy: {
       copy: {
-        overview: '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 흰 버드나무를 만나는 58초의 탄생 서사입니다.',
+        overview: '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 흰 버드나무를 만나는 41초의 탄생 서사입니다.',
         concept: '어두운 판타지가 아닌, 아침의 흰빛으로 가득한 신성한 들판을 핵심 태도로 설정했습니다.',
         process: '환경과 꽃의 질감을 먼저 고정한 뒤, 각성·비행·세계의 확장으로 장면을 단계적으로 발전시켰습니다.',
         character: '투명한 날개, 아이보리 드레스, 골드 라인과 꽃 장식을 캐릭터의 고정 언어로 삼았습니다.',
