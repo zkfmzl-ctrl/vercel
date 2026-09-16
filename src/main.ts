@@ -47,6 +47,14 @@ function motionMarkup(project: Project) {
   `;
 }
 
+function caseStudyImageMarkup(image: { src: string; alt: string }, className = '') {
+  return `<img class="case-study-image ${className}" src="${image.src}" alt="${image.alt}" loading="lazy" />`;
+}
+
+function caseStudyGalleryMarkup(images: Array<{ src: string; alt: string }>, className = '') {
+  return `<div class="case-study-gallery ${className}">${images.map((image) => caseStudyImageMarkup(image)).join('')}</div>`;
+}
+
 function projectTags(project: Project) {
   return (project.tech ?? ['SVG', 'Visual System']).slice(0, 3).map((tag) => `<span>${tag}</span>`).join('');
 }
@@ -85,6 +93,28 @@ function featuredWorkMarkup() {
 function projectPageMarkup(project: Project, index: number) {
   const role = project.role?.join(' · ') ?? 'Visual Direction';
   const tools = 'ChatGPT · Grok · Premiere Pro';
+  const copy = {
+    overview: 'Problem을 선명하게 정의하고 프로젝트의 목표와 방향을 정리했습니다.',
+    concept: '캐릭터와 장면의 핵심 태도를 정해 시각적 기준을 세웠습니다.',
+    process: 'AI와 2D/3D 그래픽을 조합해 Process를 빠르게 반복하고 Solution을 좁혔습니다.',
+    character: '컬러, 표정, 소품을 조율해 일관된 비주얼 언어를 만들었습니다.',
+    storyboard: '움직임과 화면 전환을 설계해 장면 사이의 리듬을 정리했습니다.',
+    motion: '정지된 비주얼을 움직임으로 확장한 실제 프로젝트 결과입니다.',
+    final: 'Solution을 최종 이미지와 모션 에셋으로 확장했습니다.',
+    result: '캐릭터, 세계관, 스토리가 하나의 경험으로 기억되도록 완성했습니다.',
+    ...project.caseStudy?.copy
+  };
+  const caseStudy = project.caseStudy;
+  const conceptMedia = caseStudy?.concept ? `<div class="case-study-wide-media">${caseStudyImageMarkup(caseStudy.concept)}</div>` : '';
+  const processMedia = caseStudy?.process?.length ? caseStudyGalleryMarkup(caseStudy.process, 'process-gallery') : '';
+  const characterMedia = caseStudy?.character?.length
+    ? caseStudyGalleryMarkup(caseStudy.character, 'character-gallery')
+    : `<div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>`;
+  const storyboardMedia = caseStudy?.storyboard ? `<div class="case-study-wide-media">${caseStudyImageMarkup(caseStudy.storyboard)}</div>` : '';
+  const finalMedia = caseStudy?.final?.length
+    ? caseStudyGalleryMarkup(caseStudy.final, 'final-gallery')
+    : `<div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>`;
+  const resultMedia = caseStudy?.result ? `<div class="case-study-wide-media result-media">${caseStudyImageMarkup(caseStudy.result)}</div>` : '';
   return `
     <div class="project-page" role="main" aria-labelledby="${project.id}-detail-title">
       <header class="project-page-header">
@@ -106,14 +136,14 @@ function projectPageMarkup(project: Project, index: number) {
         </div>
         <div class="project-detail-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div>
         <div class="case-study-flow">
-          <article><span>01</span><div><h3>OVERVIEW</h3><p>Problem을 선명하게 정의하고 프로젝트의 목표와 방향을 정리했습니다.</p></div></article>
-          <article><span>02</span><div><h3>CONCEPT</h3><p>캐릭터와 장면의 핵심 태도를 정해 시각적 기준을 세웠습니다.</p></div></article>
-          <article><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>AI와 2D/3D 그래픽을 조합해 Process를 빠르게 반복하고 Solution을 좁혔습니다.</p></div></article>
-          <article><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>컬러, 표정, 소품을 조율해 일관된 비주얼 언어를 만들었습니다.</p><div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div></div></article>
-          <article><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>움직임과 화면 전환을 설계해 장면 사이의 리듬을 정리했습니다.</p></div></article>
-          <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>정지된 비주얼을 움직임으로 확장한 실제 프로젝트 결과입니다.</p>${motionMarkup(project)}</div></article>
-          <article><span>07</span><div><h3>FINAL</h3><p>Solution을 최종 이미지와 모션 에셋으로 확장했습니다.</p><div class="case-study-section-media" style="--project-media-aspect: ${mediaAspectRatio(project)}">${posterMarkup(project)}</div></div></article>
-          <article><span>08</span><div><h3>RESULT</h3><p>캐릭터, 세계관, 스토리가 하나의 경험으로 기억되도록 완성했습니다.</p></div></article>
+          <article><span>01</span><div><h3>OVERVIEW</h3><p>${copy.overview}</p></div></article>
+          <article class="case-study-wide"><span>02</span><div><h3>CONCEPT</h3><p>${copy.concept}</p>${conceptMedia}</div></article>
+          <article class="case-study-wide"><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>${copy.process}</p>${processMedia}</div></article>
+          <article class="case-study-wide"><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>${copy.character}</p>${characterMedia}</div></article>
+          <article class="case-study-wide"><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>${copy.storyboard}</p>${storyboardMedia}</div></article>
+          <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>${copy.motion}</p>${motionMarkup(project)}</div></article>
+          <article class="case-study-wide"><span>07</span><div><h3>FINAL</h3><p>${copy.final}</p>${finalMedia}</div></article>
+          <article class="case-study-wide"><span>08</span><div><h3>RESULT</h3><p>${copy.result}</p>${resultMedia}</div></article>
         </div>
       </div>
       <a class="project-page-footer-back" href="/#works">← BACK TO WORKS</a>

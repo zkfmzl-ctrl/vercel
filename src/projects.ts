@@ -1,6 +1,13 @@
 export type ProjectType = 'app' | 'web';
 export type ProjectMediaType = 'image' | 'video';
 
+export type CaseStudyImage = {
+  src: string;
+  alt: string;
+};
+
+export type CaseStudyCopy = Partial<Record<'overview' | 'concept' | 'process' | 'character' | 'storyboard' | 'motion' | 'final' | 'result', string>>;
+
 export type Project = {
   id: string;
   slug: string;
@@ -16,6 +23,15 @@ export type Project = {
   description: string;
   tech?: string[];
   role?: string[];
+  caseStudy?: {
+    copy?: CaseStudyCopy;
+    concept?: CaseStudyImage;
+    process?: CaseStudyImage[];
+    character?: CaseStudyImage[];
+    storyboard?: CaseStudyImage;
+    final?: CaseStudyImage[];
+    result?: CaseStudyImage;
+  };
 };
 
 export const projects: Project[] = [
@@ -24,15 +40,47 @@ export const projects: Project[] = [
     slug: 'pink-noise',
     type: 'web',
     title: 'FAIRY OF DAWN',
-    category: 'ILLUSTRATION',
+    category: 'AI FILM / VISUAL DEVELOPMENT',
     year: '01',
-    media: '/videos/source-01.mp4',
+    media: '/videos/fairy/motion-01.mp4',
     mediaType: 'video',
-    poster: '/images/video-posters/source-01.jpg',
+    poster: '/images/fairy/scene-01.png',
     mediaAspect: '16:9',
-    description: '캐릭터 콘셉트부터 시트, 키비주얼까지 제작한 핑크 캐릭터 프로젝트입니다.',
-    tech: ['CHARACTER DESIGN', 'VISUAL DIRECTION'],
-    role: ['Character Design', 'Visual Direction']
+    description: '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 신성한 흰 버드나무를 만나는 탄생의 서사를 만들었습니다.',
+    tech: ['CHARACTER DESIGN', 'VISUAL DIRECTION', 'MOTION'],
+    role: ['Visual Direction', 'Character Design', 'Motion Editing'],
+    caseStudy: {
+      copy: {
+        overview: '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 흰 버드나무를 만나는 58초의 탄생 서사입니다.',
+        concept: '어두운 판타지가 아닌, 아침의 흰빛으로 가득한 신성한 들판을 핵심 태도로 설정했습니다.',
+        process: '환경과 꽃의 질감을 먼저 고정한 뒤, 각성·비행·세계의 확장으로 장면을 단계적으로 발전시켰습니다.',
+        character: '투명한 날개, 아이보리 드레스, 골드 라인과 꽃 장식을 캐릭터의 고정 언어로 삼았습니다.',
+        storyboard: '꽃봉오리의 클로즈업에서 시작해 각성, 비행, 흰 버드나무 리빌로 이어지는 카메라 리듬을 설계했습니다.',
+        motion: '정지된 비주얼을 장면별 움직임과 사운드로 확장한 실제 프로젝트 결과입니다.',
+        final: '꽃봉오리의 미세한 빛부터 광활한 하늘의 엔딩까지, 최종 이미지와 모션 에셋을 하나의 흐름으로 확장했습니다.',
+        result: '캐릭터, 세계관, 스토리와 사운드를 하나의 경험으로 묶어 AI 이미지에서 영상으로 이어지는 시각적 문법을 구축했습니다.'
+      },
+      concept: { src: '/images/fairy/environment-sheet.png', alt: 'Celestial Meadow 환경 디자인 시트' },
+      process: [
+        { src: '/images/fairy/scene-01.png', alt: '빛의 들판 환경 키비주얼' },
+        { src: '/images/fairy/scene-02.png', alt: '투명한 꽃봉오리 장면' },
+        { src: '/images/fairy/scene-03.png', alt: '꽃 안에서 잠든 요정 장면' },
+        { src: '/images/fairy/scene-04.png', alt: '꽃 위에서 깨어난 요정 장면' }
+      ],
+      character: [
+        { src: '/images/fairy/character-sheet.png', alt: 'Fairy of Dawn 캐릭터 디자인 시트' },
+        { src: '/images/fairy/scene-10.png', alt: '요정 얼굴과 눈 디테일' },
+        { src: '/images/fairy/flower-sheet.png', alt: 'Luminous Blossom 꽃 디자인 시트' }
+      ],
+      storyboard: { src: '/images/fairy/storyboard.png', alt: '요정 탄생 스토리보드와 콘티' },
+      final: [
+        { src: '/images/fairy/scene-05.png', alt: '빛의 들판을 비행하는 요정' },
+        { src: '/images/fairy/scene-06.png', alt: '확장된 천상의 들판' },
+        { src: '/images/fairy/scene-07.png', alt: '흰 버드나무를 향해 가는 요정' },
+        { src: '/images/fairy/scene-08.png', alt: '흰 버드나무 앞의 요정 엔딩 장면' }
+      ],
+      result: { src: '/images/fairy/willow-sheet.png', alt: 'Sacred White Willow 세계관 디자인 시트' }
+    }
   },
   {
     id: 'work-02',
