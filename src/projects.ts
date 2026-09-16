@@ -20,12 +20,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'work-varco-sound',
-    slug: 'varco-sound',
+    id: 'work-01',
+    slug: 'pink-noise',
     type: 'web',
     title: 'FAIRY OF DAWN',
-    category: 'ANIMATION / AI FILM',
-    year: '2026',
+    category: 'AI FILM / VISUAL DEVELOPMENT',
+    year: '01',
     media: '/videos/varco-sound/1.mp4',
     mediaType: 'video',
     poster: '/images/varco-sound/hero.png',
@@ -33,21 +33,6 @@ export const projects: Project[] = [
     description: '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 신성한 흰 버드나무를 만나는 탄생의 서사를 만들었습니다.',
     tech: ['AI VISUAL', 'CHARACTER DESIGN', 'MOTION'],
     role: ['Visual Direction', 'Character Design', 'Motion Editing']
-  },
-  {
-    id: 'work-01',
-    slug: 'pink-noise',
-    type: 'web',
-    title: 'NC WALL',
-    category: 'ILLUSTRATION',
-    year: '01',
-    media: '/videos/source-01.mp4',
-    mediaType: 'video',
-    poster: '/images/video-posters/source-01.jpg',
-    mediaAspect: '16:9',
-    description: '캐릭터 콘셉트부터 시트, 키비주얼까지 제작한 핑크 캐릭터 프로젝트입니다.',
-    tech: ['CHARACTER DESIGN', 'VISUAL DIRECTION'],
-    role: ['Character Design', 'Visual Direction']
   },
   {
     id: 'work-02',

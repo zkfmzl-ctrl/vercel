@@ -8745,3 +8745,42 @@ body,
   .varco-final-grid img { height: 220px; }
   .varco-result-copy { font-size: 18px; }
 }
+
+/* Keep the existing dark project-detail design while adding VARCO materials. */
+.project-page .case-study-detail-note {
+  margin-top: 18px;
+  color: #f45baf;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.project-page .case-study-section-media img {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  object-fit: cover;
+}
+
+.project-page .case-study-development-grid,
+.project-page .case-study-final-grid,
+.project-page .case-study-character-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.project-page .case-study-development-grid { grid-template-columns: repeat(3, 1fr); }
+.project-page .case-study-development-grid img { aspect-ratio: 1 / 1; object-fit: cover; }
+.project-page .case-study-character-grid { grid-template-columns: 1.4fr .6fr; align-items: start; }
+.project-page .case-study-character-grid img { height: 100%; object-fit: cover; }
+.project-page .case-study-final-grid { grid-template-columns: 1.2fr 1fr .85fr; }
+.project-page .case-study-final-grid img { aspect-ratio: 1.35 / 1; object-fit: cover; }
+.project-page .case-study-result-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.project-page .case-study-result-tags span { padding: 8px 10px; border: 1px solid rgba(244,91,175,.42); color: #f45baf; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+
+@media (max-width: 640px) {
+  .project-page .case-study-development-grid,
+  .project-page .case-study-final-grid,
+  .project-page .case-study-character-grid { grid-template-columns: 1fr; }
+}
