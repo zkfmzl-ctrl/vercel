@@ -111,7 +111,7 @@ export const projects: Project[] = [
         process: '제품 컬러와 사용 장면을 반복 비교하며 기능 설명과 감성적인 화면의 균형을 좁혔습니다.',
         character: '제품의 곡선, 컬러, 리클라이닝 실루엣을 일관된 비주얼 언어로 정리했습니다.',
         storyboard: '제품 소개, 사용 장면, 브랜드 메시지로 이어지는 컷의 순서와 카메라 흐름을 설계했습니다.',
-        motion: '제품의 형태와 사용성을 짧은 모션 클립으로 연결했습니다.',
+        motion: '비슷한 장면의 반복을 피하고, 1·4·6·8·14·22번 영상의 서로 다른 움직임을 짧은 연결 클립으로 구성했습니다.',
         final: 'BEREX Pebble Chair의 제품 영상과 주요 비주얼을 하나의 브랜드 경험으로 확장했습니다.',
         result: '제품 정보와 감성적 장면을 결합해 편안함과 기능성이 함께 기억되는 영상 언어를 구축했습니다.'
       },
@@ -129,12 +129,12 @@ export const projects: Project[] = [
       ],
       storyboard: { src: '/images/berex/story-02.png', alt: 'BEREX 제품 영상 스토리보드 장면' },
       motionClips: [
-        { src: '/videos/berex/clip-01.mp4', alt: 'BEREX 제품 소개 연결 영상 01' },
-        { src: '/videos/berex/clip-02.mp4', alt: 'BEREX 제품 소개 연결 영상 02' },
-        { src: '/videos/berex/clip-03.mp4', alt: 'BEREX 제품 소개 연결 영상 03' },
-        { src: '/videos/berex/clip-04.mp4', alt: 'BEREX 제품 소개 연결 영상 04' },
-        { src: '/videos/berex/clip-05.mp4', alt: 'BEREX 제품 소개 연결 영상 05' },
-        { src: '/videos/berex/clip-06.mp4', alt: 'BEREX 제품 소개 연결 영상 06' }
+        { src: '/videos/berex/clip-01.mp4', alt: 'BEREX 영상 1번 연결 클립' },
+        { src: '/videos/berex/clip-02.mp4', alt: 'BEREX 영상 4번 연결 클립' },
+        { src: '/videos/berex/clip-03.mp4', alt: 'BEREX 영상 6번 연결 클립' },
+        { src: '/videos/berex/clip-04.mp4', alt: 'BEREX 영상 8번 연결 클립' },
+        { src: '/videos/berex/clip-05.mp4', alt: 'BEREX 영상 14번 연결 클립' },
+        { src: '/videos/berex/clip-06.mp4', alt: 'BEREX 영상 22번 연결 클립' }
       ],
       final: [
         { src: '/images/berex/story-01.png', alt: 'BEREX 제품 영상 최종 장면 01' },
