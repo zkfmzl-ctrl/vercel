@@ -70,7 +70,6 @@ export const projects: Project[] = [
       ],
       character: [
         { src: '/images/fairy/character-sheet.png', alt: 'Fairy of Dawn 캐릭터 디자인 시트' },
-        { src: '/images/fairy/scene-10.png', alt: '요정 얼굴과 눈 디테일' },
         { src: '/images/fairy/flower-sheet.png', alt: 'Luminous Blossom 꽃 디자인 시트' },
         { src: '/images/fairy/willow-sheet.png', alt: 'Sacred White Willow 나무 디자인 시트' }
       ],
