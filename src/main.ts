@@ -191,8 +191,6 @@ function featuredWorkMarkup() {
 function projectPageMarkup(project: Project, index: number) {
   const role = project.role?.join(' · ') ?? 'Visual Direction';
   const tools = 'ChatGPT · Grok · Premiere Pro';
-  const isVarco = project.slug === 'pink-noise';
-  const image = (name: string, alt: string, className = '') => `<img class="${className}" src="${varcoImage(name)}" alt="${alt}" loading="lazy" />`;
   return `
     <div class="project-page" role="main" aria-labelledby="${project.id}-detail-title">
       <header class="project-page-header">
@@ -214,14 +212,14 @@ function projectPageMarkup(project: Project, index: number) {
         </div>
         <div class="project-detail-media">${posterMarkup(project)}</div>
         <div class="case-study-flow">
-          <article><span>01</span><div><h3>OVERVIEW</h3><p>${isVarco ? '투명한 꽃봉오리에서 태어난 요정이 빛의 들판을 지나 흰 버드나무를 만나는 58초의 탄생 서사입니다.' : 'Problem을 선명하게 정의하고 프로젝트의 목표와 방향을 정리했습니다.'}</p>${isVarco ? `<p class="case-study-detail-note">빛 · 투명성 · 탄생 · 확장</p>` : ''}</div></article>
-          <article><span>02</span><div><h3>CONCEPT</h3><p>${isVarco ? '어두운 판타지가 아닌, 아침의 흰빛으로 가득한 신성한 들판을 핵심 태도로 설정했습니다.' : '캐릭터와 장면의 핵심 태도를 정해 시각적 기준을 세웠습니다.'}</p>${isVarco ? `<div class="case-study-section-media">${image('environment-sheet.png', 'Celestial Meadow 환경 디자인 시트')}</div>` : ''}</div></article>
-          <article><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>${isVarco ? '작은 꽃의 질감과 빛을 먼저 고정한 뒤, 요정의 각성과 세계의 확장으로 장면을 단계적으로 발전시켰습니다.' : 'AI와 2D/3D 그래픽을 조합해 Process를 빠르게 반복하고 Solution을 좁혔습니다.'}</p>${isVarco ? `<div class="case-study-development-grid">${image('bud.png', '투명한 꽃봉오리')}${image('birth.png', '꽃 안에서 잠든 요정')}${image('awakening.png', '꽃 위에서 깨어난 요정')}</div>` : ''}</div></article>
-          <article><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>${isVarco ? '투명한 날개, 아이보리 드레스, 골드 라인과 꽃 장식을 캐릭터의 고정 언어로 삼아 이미지 사이의 일관성을 맞췄습니다.' : '컬러, 표정, 소품을 조율해 일관된 비주얼 언어를 만들었습니다.'}</p>${isVarco ? `<div class="case-study-character-grid"><div class="case-study-section-media">${image('character-sheet.png', 'Fairy of Dawn 캐릭터 디자인 시트')}</div><div class="case-study-section-media">${image('portrait.png', '요정 얼굴 클로즈업')}</div></div>` : `<div class="case-study-section-media">${posterMarkup(project)}</div>`}</div></article>
-          <article><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>${isVarco ? '클로즈업 오프닝에서 시작해 햇빛, 각성, 비행, 흰 버드나무 리빌로 이어지는 카메라 리듬을 설계했습니다.' : '움직임과 화면 전환을 설계해 장면 사이의 리듬을 정리했습니다.'}</p>${isVarco ? `<div class="case-study-section-media">${image('storyboard.png', '요정 탄생 스토리보드와 콘티')}</div>` : ''}</div></article>
+          <article><span>01</span><div><h3>OVERVIEW</h3><p>Problem을 선명하게 정의하고 프로젝트의 목표와 방향을 정리했습니다.</p></div></article>
+          <article><span>02</span><div><h3>CONCEPT</h3><p>캐릭터와 장면의 핵심 태도를 정해 시각적 기준을 세웠습니다.</p></div></article>
+          <article><span>03</span><div><h3>PROCESS / DEVELOPMENT</h3><p>AI와 2D/3D 그래픽을 조합해 Process를 빠르게 반복하고 Solution을 좁혔습니다.</p></div></article>
+          <article><span>04</span><div><h3>CHARACTER / VISUAL</h3><p>컬러, 표정, 소품을 조율해 일관된 비주얼 언어를 만들었습니다.</p><div class="case-study-section-media">${posterMarkup(project)}</div></div></article>
+          <article><span>05</span><div><h3>STORYBOARD / CONTI</h3><p>움직임과 화면 전환을 설계해 장면 사이의 리듬을 정리했습니다.</p></div></article>
           <article class="case-study-motion"><span>06</span><div><h3>MOTION</h3><p>정지된 비주얼을 움직임으로 확장한 실제 프로젝트 결과입니다.</p>${motionMarkup(project)}</div></article>
-          <article><span>07</span><div><h3>FINAL</h3><p>${isVarco ? '꽃봉오리의 미세한 빛부터 광활한 하늘의 엔딩까지, 최종 이미지와 모션 에셋을 하나의 흐름으로 확장했습니다.' : 'Solution을 최종 이미지와 모션 에셋으로 확장했습니다.'}</p>${isVarco ? `<div class="case-study-final-grid">${image('world.png', '하늘 위 빛의 들판')}${image('tree-reveal.png', '거대한 흰 버드나무')}${image('ending.png', '흰 버드나무 앞에 선 요정')}</div>` : `<div class="case-study-section-media">${posterMarkup(project)}</div>`}</div></article>
-          <article><span>08</span><div><h3>RESULT</h3><p>${isVarco ? '캐릭터, 세계관, 스토리와 사운드를 하나의 경험으로 묶어 AI 이미지에서 영상으로 이어지는 시각적 문법을 구축했습니다.' : '캐릭터, 세계관, 스토리가 하나의 경험으로 기억되도록 완성했습니다.'}</p>${isVarco ? `<div class="case-study-result-tags"><span>CHARACTER CONSISTENCY</span><span>WORLD BUILDING</span><span>AI VISUAL</span><span>CINEMATIC MOTION</span></div>` : ''}</div></article>
+          <article><span>07</span><div><h3>FINAL</h3><p>Solution을 최종 이미지와 모션 에셋으로 확장했습니다.</p><div class="case-study-section-media">${posterMarkup(project)}</div></div></article>
+          <article><span>08</span><div><h3>RESULT</h3><p>캐릭터, 세계관, 스토리가 하나의 경험으로 기억되도록 완성했습니다.</p></div></article>
         </div>
       </div>
       <a class="project-page-footer-back" href="/#works">← BACK TO WORKS</a>
@@ -374,7 +372,9 @@ const requestedProject = requestedSlug
 
 if (requestedProject) {
   const projectIndex = projects.indexOf(requestedProject);
-  app.innerHTML = projectPageMarkup(requestedProject, projectIndex);
+  app.innerHTML = requestedProject.slug === 'varco-sound'
+    ? varcoProjectPageMarkup(requestedProject)
+    : projectPageMarkup(requestedProject, projectIndex);
   document.title = `${requestedProject.title} · NO RULES.`;
   document.querySelectorAll<HTMLVideoElement>('.project-page video').forEach((video) => {
     void video.play().catch(() => undefined);
