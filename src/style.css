@@ -8745,3 +8745,9 @@ body,
     margin-top: 18px !important;
   }
 }
+
+@media (min-width: 821px) {
+  .press-play-heading .featured-filters {
+    width: min(100%, 520px);
+  }
+}
