@@ -10,6 +10,8 @@ const assetRoot = '/images/no-rules/ki';
 const pinkCharacterSrc = `${assetRoot}/KI01.png?v=20260915-edge-clean`;
 
 function mediaAspectClass(project: Project) {
+  if (project.mediaAspect === '9:16') return 'portrait';
+  if (project.mediaAspect === '16:9') return 'landscape';
   return typeof project.mediaAspect === 'number' && project.mediaAspect < 0.8 ? 'portrait' : 'landscape';
 }
 
@@ -38,7 +40,7 @@ function posterMarkup(project: Project) {
 function motionMarkup(project: Project) {
   if (project.mediaType !== 'video') return '';
   return `
-    <div class="case-study-motion-media">
+    <div class="case-study-motion-media ${mediaAspectClass(project) === 'portrait' ? 'is-portrait' : 'is-landscape'}" style="--project-media-aspect: ${mediaAspectRatio(project)}">
       <video controls playsinline preload="metadata" poster="${project.poster ?? ''}" aria-label="${project.title} motion result">
         <source src="${project.media}" type="video/mp4" />
       </video>
