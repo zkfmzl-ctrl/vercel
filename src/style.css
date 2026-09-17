@@ -8719,3 +8719,29 @@ body,
 .case-study-motion-media.is-landscape {
   width: min(100%, 720px);
 }
+
+/* The work filter now belongs to the single project gallery instead of a
+   separate duplicate Featured Works strip. */
+.press-play-heading {
+  align-items: flex-end !important;
+}
+
+.press-play-heading-copy {
+  min-width: 0;
+}
+
+.press-play-heading .featured-filters {
+  justify-content: flex-end;
+  margin: 0 !important;
+}
+
+.press-play-grid > .project-section[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 820px) {
+  .press-play-heading .featured-filters {
+    justify-content: flex-start;
+    margin-top: 18px !important;
+  }
+}

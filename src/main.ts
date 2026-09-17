@@ -75,7 +75,7 @@ function projectTags(project: Project) {
 function projectSection(project: Project, index: number) {
   const aspectClass = mediaAspectClass(project);
   return `
-    <article class="project-section tile-${aspectClass} depth-${(index % 4) + 1}" id="${project.id}" data-project style="--tile-aspect: ${mediaAspectRatio(project)}">
+    <article class="project-section tile-${aspectClass} depth-${(index % 4) + 1}" id="${project.id}" data-project data-work-category="${project.category}" style="--tile-aspect: ${mediaAspectRatio(project)}">
       <div class="project-card-graffiti" aria-hidden="true">${index % 2 ? '✦' : '×'}</div>
       <div class="media-stage">${mediaMarkup(project)}</div>
       <div class="project-copy">
@@ -87,20 +87,6 @@ function projectSection(project: Project, index: number) {
       </div>
     </article>
   `;
-}
-
-function featuredWorkMarkup() {
-  return projects.filter((project) => project.featured !== false).map((project, index) => `
-    <a class="featured-work-card featured-work-card-${index + 1}" href="/work/${project.slug}" data-work-category="${project.category}" data-featured-card hidden>
-      <span class="featured-work-index">0${index + 1}</span>
-      <span class="featured-work-image">${mediaMarkup(project)}</span>
-      <span class="featured-work-meta">
-        <strong>${project.title}</strong>
-        <small>${project.category}</small>
-      </span>
-      <span class="featured-work-arrow" aria-hidden="true">↗</span>
-    </a>
-  `).join('');
 }
 
 function projectPageMarkup(project: Project, index: number) {
@@ -218,11 +204,11 @@ app.innerHTML = `
       </div>
     </section>
 
-    <section class="press-play-section page-container" id="works" aria-label="Featured works and selected projects">
-          <div class="featured-works" id="featured-works">
-            <div class="featured-works-heading">
-              <p class="eyebrow">FEATURED WORKS</p>
-              <a href="#works">SEE ALL <span aria-hidden="true">→</span></a>
+    <section class="press-play-section page-container" id="works" aria-label="Selected projects">
+          <div class="press-play-heading">
+            <div class="press-play-heading-copy">
+              <p class="eyebrow">SELECTED PROJECTS</p>
+              <h2>CHARACTERS, MARKS,<br /><em>NO RULES.</em></h2>
             </div>
             <div class="featured-filters" role="tablist" aria-label="작품 필터">
               <button type="button" class="featured-filter is-active" data-work-filter="ALL" aria-pressed="true">ALL</button>
@@ -230,11 +216,6 @@ app.innerHTML = `
               <button type="button" class="featured-filter" data-work-filter="ANIMATION" aria-pressed="false">ANIMATION</button>
               <button type="button" class="featured-filter" data-work-filter="MUSIC VIDEO" aria-pressed="false">MUSIC VIDEO</button>
             </div>
-            <div class="featured-works-grid">${featuredWorkMarkup()}</div>
-          </div>
-          <div class="press-play-heading">
-            <p class="eyebrow">SELECTED PROJECTS</p>
-            <h2>CHARACTERS, MARKS,<br /><em>NO RULES.</em></h2>
           </div>
           <div class="press-play-grid">${projects.map(projectSection).join('')}</div>
     </section>
@@ -323,7 +304,7 @@ const menuToggle = document.querySelector<HTMLButtonElement>('#menu-toggle');
 const siteNav = document.querySelector<HTMLElement>('#site-nav');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const featuredFilters = [...document.querySelectorAll<HTMLButtonElement>('[data-work-filter]')];
-const featuredCards = [...document.querySelectorAll<HTMLElement>('[data-featured-card]')];
+const workCards = [...document.querySelectorAll<HTMLElement>('[data-project]')];
 
 function matchesFeaturedFilter(card: HTMLElement, filter: string) {
   const category = card.dataset.workCategory ?? '';
@@ -332,9 +313,8 @@ function matchesFeaturedFilter(card: HTMLElement, filter: string) {
     || category.includes(filter);
 }
 
-function applyFeaturedCardVisibility(card: HTMLElement, filter: string) {
-  const isLandscape = card.dataset.featuredEligible === 'true';
-  card.hidden = !isLandscape || !matchesFeaturedFilter(card, filter);
+function applyWorkCardVisibility(card: HTMLElement, filter: string) {
+  card.hidden = !matchesFeaturedFilter(card, filter);
 }
 
 function readMediaRatio(media: HTMLImageElement | HTMLVideoElement) {
@@ -363,21 +343,20 @@ function waitForMediaRatio(media: HTMLImageElement | HTMLVideoElement) {
   });
 }
 
+function applyWorkFilter(filter: string) {
+  workCards.forEach((card) => {
+    applyWorkCardVisibility(card, filter);
+  });
+}
+
 async function filterFeaturedCardsBySourceRatio() {
   const activeFilter = document.querySelector<HTMLButtonElement>('[data-work-filter].is-active')?.dataset.workFilter ?? 'ALL';
-  await Promise.all(featuredCards.map(async (card) => {
+  await Promise.all(workCards.map(async (card) => {
     const media = card.querySelector<HTMLImageElement | HTMLVideoElement>('.project-media');
     const ratio = media ? await waitForMediaRatio(media) : 0;
-    const isLandscape = ratio >= 1.5;
-    card.dataset.featuredEligible = String(isLandscape);
     if (ratio > 0) card.dataset.mediaRatio = ratio.toFixed(3);
-    applyFeaturedCardVisibility(card, activeFilter);
+    applyWorkCardVisibility(card, activeFilter);
   }));
-
-  document.querySelector<HTMLElement>('.featured-works-grid')?.toggleAttribute(
-    'data-no-landscape-sources',
-    featuredCards.every((card) => card.dataset.featuredEligible !== 'true'),
-  );
 }
 
 featuredFilters.forEach((filterButton) => {
@@ -388,9 +367,7 @@ featuredFilters.forEach((filterButton) => {
       button.classList.toggle('is-active', isActive);
       button.setAttribute('aria-pressed', String(isActive));
     });
-    featuredCards.forEach((card) => {
-      applyFeaturedCardVisibility(card, filter);
-    });
+    applyWorkFilter(filter);
   });
 });
 
