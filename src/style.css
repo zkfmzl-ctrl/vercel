@@ -8751,3 +8751,16 @@ body,
     width: min(100%, 520px);
   }
 }
+
+/* Center the label itself inside each VIEW PROJECT button; the arrow stays
+   pinned to the button edge so it does not pull the label off-center. */
+.press-play-grid > .project-section .project-link {
+  position: relative;
+  justify-content: center !important;
+  gap: 0 !important;
+}
+
+.press-play-grid > .project-section .project-link > span {
+  position: absolute;
+  right: 12px;
+}
